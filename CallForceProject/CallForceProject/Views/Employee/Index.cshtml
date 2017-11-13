@@ -1,0 +1,18 @@
+﻿
+@{
+    ViewBag.Title = "CallForce";
+}
+
+<h2>CallForce Employee Dashboard</h2>
+
+@using (Html.BeginForm("EmpChosen", "Employee" , FormMethod.Get))
+{
+<fieldset>
+    Select Employee:
+    @Html.DropDownList("employee")
+    <p>
+        <input type="submit" value="Submit" />
+    </p>
+</fieldset>
+} 
+
