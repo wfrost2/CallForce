@@ -8,11 +8,14 @@
 @using (Html.BeginForm("EmpChosen", "Employee" , FormMethod.Get))
 {
 <fieldset>
-    Select Employee:
-    @Html.DropDownList("employee")
-    <p>
-        <input type="submit" value="Submit" />
-    </p>
+    <div class="col-md-4">
+        Select Employee:
+        @Html.DropDownList("employee", null, new { @class = "form-control" })
+        <br />
+        <p>
+            <input type="submit" value="Submit" class="btn btn-primary" />
+        </p>
+    </div>
 </fieldset>
 } 
 
