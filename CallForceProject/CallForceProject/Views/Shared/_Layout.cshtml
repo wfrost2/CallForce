@@ -37,6 +37,9 @@
             </div>
         </div>
     </div>
+    <ul class="breadcrumb">
+        @Html.MvcSiteMap().SiteMapPath()
+    </ul>
     <div class="container body-content">
         @RenderBody()
         <hr />
