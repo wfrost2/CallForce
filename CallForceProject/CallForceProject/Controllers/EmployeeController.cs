@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CallForceProject.DAL;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,6 +9,9 @@ namespace CallForceProject.Controllers
 {
     public class EmployeeController : Controller
     {
+        private CallForceContext db = new CallForceContext();
+
+
         string empName;
         string empImg;
         int empYrs;
@@ -18,11 +22,8 @@ namespace CallForceProject.Controllers
         // GET: Employee
         public ActionResult Index()
         {
-            List<SelectListItem> emp = new List<SelectListItem>();
-            emp.Add(new SelectListItem { Text = "Conner Ludlow", Value = "0", Selected = true });
-            emp.Add(new SelectListItem { Text = "Nathan Walton", Value = "1" });
-            emp.Add(new SelectListItem { Text = "Michael Scott", Value = "2" });
-            ViewBag.employee = emp;
+            ViewBag.empID = new SelectList(db.Employees, "empID", "empName");
+
             return View();
         }
 
